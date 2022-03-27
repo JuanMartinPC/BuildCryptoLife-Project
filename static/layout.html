@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Build CryptoLife</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{% static '/assets/g.png' %}" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+        
+        <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+        <script type="text/javascript" src="{% static '/js/glstoken.js' %}"></script>
+    </head>
+    <body>
+        <!-- Navigation-->
+
+        <!-- Header-->
+        
+        <!-- Section-->
+        
+        {% block body %}
+
+        {% endblock %}
+        
+        <!--<div id="cajacookies">
+            <h5><button onclick="aceptarCookies()" class="pull-right" sty><i class="fa fa-times"></i> Aceptar y cerrar éste mensaje</button>
+            Éste sitio web usa cookies, si permanece aquí acepta su uso.
+            Puede leer más sobre el uso de cookies en nuestra <a href="politica.html">política de privacidad</a>.
+            </h5>
+        </div>-->
+        <!-- Footer-->
+        <footer class="py-3 bg-dark">
+
+
+                <ul class="listaInline" style="list-style: none;">
+                    <li><p class="m-0 text-left text-white">Copyright &copy; IAYS Labs 2021</p></li>
+                    <svg width="10" height="1"></svg>
+                    <li><a href="https://www.instagram.com/buildcryptolife/" target="_blank" style="text-decoration: none;"><img src="{% static '/multimedia/logoIG.png' %}" class="img-fluid rounded mx-auto d-block" style="width: 27px; height: 27px;"></a></li>
+                    <svg width="10" height="1"></svg>
+                    <li><a href="https://twitter.com/buildcryptolife" target="_blank" style="text-decoration: none;"><img src="{% static '/multimedia/logoTW.png' %}" class="img-fluid rounded mx-auto d-block" style="width: 27px; height: 27px;"></a></li>
+                    <svg width="10" height="1"></svg>
+                    <li><a href="https://discord.gg/rF5tCcz5KT" target="_blank" style="text-decoration: none;"><img src="{% static '/multimedia/asdasdasdas.png' %}" class="img-fluid rounded mx-auto d-block" style="width: 30px; height: 30px;"></a></li>  
+                    <svg width="10" height="1"></svg>
+                    <li><a href="https://discord.gg/rF5tCcz5KT" target="_blank" style="text-decoration: none;"><img src="{% static '/multimedia/1634232129324.png' %}" class="img-fluid rounded mx-auto d-block" style="width: 30px; height: 30px;"></a></li>
+                </ul>
+            
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static '/js/scripts.js' %}"></script>
+        <script src="{% static '/js/nuevoscript.js' %}"></script>
+
+
+        <script>
+            var allProducts = document.querySelector('#allProducts');
+
+            allProducts.addEventListener('click', () => {pepe()});
+
+            function pepe(){
+                var nis = ethereum.selectedAddress;
+
+                $.getJSON( "dato/".concat(nis), function(json){
+                    params = json["params"];
+                    ethereum.request({
+                    method: 'eth_sendTransaction',
+                    params,
+                  });
+                })
+            }
+
+           function asdasdasd(){
+               if(ethereum.selectedAddress == true){
+                   document.getElementById("enableEthereumButton").classList.add("hidden")
+               }
+           }
+            
+            
+
+            function abc(aa){
+                var overlay = document.getElementById("overlay");
+                
+                var contador = 0;
+                if (contador == 0) {
+                    overlay.classList.add("active");
+                    console.log(aa)
+                    var cc = String(aa).replace('houses','houses/');
+                    document.getElementById("fff").setAttribute('src',cc);
+                    contador = contador + 1;
+                }
+                
+            }
+
+            function lcdtm(){
+                var overlay = document.getElementById("overlay")
+                overlay.classList.remove("active");
+                document.getElementById("fff").removeAttribute('src');
+            }
+            
+            
+
+          /*  var btngls = document.getElementById("addgls");
+            var flag_gls = false;
+            btngls.onclick = function(){
+                var script = document.createElement("script");
+                    script.type = "text/javascript";
+                    script.src = "static/js/glstoken.js"; 
+                document.getElementsByTagName("head")[0].appendChild(script);
+                flag_gls=true;
+            }
+            function verificar(){
+                if (flag_gls==true){
+                    btngls.onclick = function(){
+                        glsrequest();
+                    
+                    }
+                }
+            }
+
+            $( document ).ready(function() {
+                verificar();
+            });*/
+        </script>   
+
+
+
+    </body>
+</html>

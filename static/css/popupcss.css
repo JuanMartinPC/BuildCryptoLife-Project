@@ -1,0 +1,38 @@
+.overlay{
+    background: rgba(0, 0, 0, .3);
+    position: fixed;
+    top: 20%;
+    bottom: 0;
+    right: 0;
+    left: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden; 
+    height: 50%;
+    width:50%;  
+    margin: 20px;
+    margin-top: 60px;
+}
+
+
+.overlay.active{
+    visibility: visible;
+    
+}
+
+.popup{
+    background: #f8f8f8;
+    box-shadow: 0px,0px,5px,0px rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    padding: 20px;
+    text-align: center;
+}
+
+.btn-cerrar-popup:hover{
+    cursor: pointer;
+}
+
+#enableEthereumButton.hidden{
+    visibility: hidden;
+}

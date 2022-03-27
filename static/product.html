@@ -1,0 +1,161 @@
+
+{% extends 'layout.html' %}
+
+{% block body %}
+    {% load static %}
+    <style>
+        body{
+            background-image: url("{% static '/multimedia/lacityconarboles.png'%}");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: 100% top;
+        }
+
+        #sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+    </style>
+    
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(0, 0, 0, 0.5);">
+        <div class="container px-4 px-lg-5">
+            <!--<a class="navbar-brand" href="#!">Start Bootstrap</a>-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="/" style="background-color: transparent; color: blanchedalmond;">Home</a></li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: blanchedalmond;">Shop</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/products" id="allProducts" >All Products</a></li>
+                            <li><a class="dropdown-item" href="/rewards"> Daily Rewards </a></li>
+                            <li><a class="dropdown-item" href="#!">Market</a></li>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li><a class="dropdown-item" href="/finances">Finances</a></li>
+                            <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+                        </ul>
+                    </li>
+  
+  
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: blanchedalmond;">Legals</a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="https://build-your-cryptolife.gitbook.io/build-your-cryptolife-whitepaper-1/" target="_blank"> White Paper </a></li>
+                          <li><a class="dropdown-item" href="https://etherscan.io/token/0x3ffd098e99f5e0f4b2f73d6ad1ee6552e880d7f5?a=0x3840510e06Ed85463497EBbd9B772877177B9EAA" target="_blank"> Contract </a></li>
+                      </ul>
+                  </li>
+  
+  
+                    <li style="margin-left: 10px;"><button class="btn btn-outline-light" id="enableEthereumButton">Metamask</button></li>
+                    <li ><button class="btn btn-outline-light" id="addgls" onclick="glsrequest();" style="margin-left: 10px;">GLS</button></li>
+                  </ul>
+            </div>
+        </div>
+      </nav>
+    
+
+
+    <!--asdasdasd-->
+
+
+
+    <link rel="stylesheet" href="{% static 'css/popupcss.css' %}">
+        
+
+        <!-- Section-->
+        
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
+
+                    {% for path in casas %}
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <!-- Product image-->
+                            
+                            <img id="ffg" class="card-img-top" loading="lazy" src= {% static path %} alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Sale Item</h5>
+                                    <!-- Product price-->
+<!--                                    <span class="text-muted text-decoration-line-through">$50.00</span>-->
+                                        ETH 0.19
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                
+                                <div class="text-center"><button id="dalekpo" class="btn btn-outline-dark mt-auto" onclick="abc('{% static path %}')">View options</button></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    {% endfor %}
+
+
+            </div>
+        </section>
+        
+        <div class="overlay" id="overlay">
+            <div class="col mb-5" style="border-radius: 20px;">
+                <div class="popup" id="popup">
+                    <h3>Fancy Product</h3>
+                    <div class="card h-100">
+                        <img loading="lazy" id="fff" class="card-img-top" src=""/>
+                    </div>
+                    <h5>ETH 0.19</h5>
+                    <a id="btn-cerrar-popup" class="btn btn-outline-dark" style="text-decoration-line: none;" onclick="lcdtm()">Cerrar</a>
+                    
+                    <a id="btn-realizar-compra" class="btn btn-outline-dark" style="text-decoration-line: none;" onclick="pepe()">Comprar</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        <script>
+            if ("loading" in HTMLImageElement.prototype) {
+              console.log("El navegador soporta `lazy-loading`...");
+            } else {
+              console.log("`lazy-loading` no soportado...");
+            }
+
+        </script>
+        <script>
+        function unNombre(){
+
+        var params= [
+              {
+                from: ethereum.selectedAddress,
+                to: '0x3840510e06Ed85463497EBbd9B772877177B9EAA',
+                gas: '0x66c0', // 30400
+                gasPrice: '0x7184e72a000', // 10000000000000
+                value: '0x7184e72a', // 2441406250
+                data:
+                  '0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675',
+              },
+            ];
+
+        ethereum.request({
+            method: 'eth_sendTransaction',
+            params,
+          });
+
+        }
+
+        </script>
+
+
+
+
+    
+
+{% endblock %}
